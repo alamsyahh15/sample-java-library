@@ -1,0 +1,1 @@
+/Applications/XAMPP/xamppfiles/bin/mysql -u root library < migrations/V1__initial_schema.sql && /Applications/XAMPP/xamppfiles/bin/mysql -u root library < migrations/V2__add_timestamps.sql && javac -cp ".:mysql-connector-j-8.1.0.jar" *.java && java -cp ".:mysql-connector-j-8.1.0.jar" LibrarySystem &&  java -cp ".:mysql-connector-j-8.1.0.jar" LibrarySystem 2>&1 &

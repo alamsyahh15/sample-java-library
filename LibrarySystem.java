@@ -1,8 +1,21 @@
-import javax.swing.*;
-import java.awt.*;
-import java.sql.*;
-import java.io.File;
-import java.io.IOException;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 /**
  * Kelas utama sistem perpustakaan yang menginisialisasi aplikasi
@@ -42,9 +55,9 @@ class Database {
                 System.out.println("Connected to MySQL database");
                 
                 // Run database migrations
-                String migrationsPath = new File("migrations").getAbsolutePath();
-                DatabaseMigration migration = new DatabaseMigration(conn, migrationsPath);
-                migration.migrate();
+                // String migrationsPath = new File("migrations").getAbsolutePath();
+                // DatabaseMigration migration = new DatabaseMigration(conn, migrationsPath);
+                // migration.migrate();
                 
             } catch (ClassNotFoundException e) {
                 System.err.println("MySQL JDBC driver not found: " + e.getMessage());
@@ -52,10 +65,7 @@ class Database {
             } catch (SQLException e) {
                 System.err.println("Database connection error: " + e.getMessage());
                 System.exit(1);
-            } catch (IOException e) {
-                System.err.println("Error reading migration files: " + e.getMessage());
-                System.exit(1);
-            }
+            } 
         }
     }
 

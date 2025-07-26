@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     book_id VARCHAR(50) NOT NULL,
     member_id VARCHAR(50) NOT NULL,
-    transaction_date DATETIME NOT NULL,
+    loan_date DATETIME NOT NULL,
     FOREIGN KEY(book_id) REFERENCES books(id),
     FOREIGN KEY(member_id) REFERENCES members(id)
 );
